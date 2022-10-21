@@ -52,5 +52,12 @@ pipeline{
                 }
             }
         }
+
+        stage('sonarQube') {
+            agent any
+            steps {
+                sh "/var/jenkins_home/sonar-scanner/sonar-scanner-3.3.0.1492-linux/bin/sonar-scanner -v"
+            }
+        }
     }
 }
